@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Controle de despesas 👋</title>
+  </head>
+  <body>
+    <div id="div-add" class="div-add">
+      Adicionar transação
+      <form id="form">
+        <div class="form-control">
+          <input
+            autofocus
+            type="text"
+            id="text"
+            placeholder="Nome da transação"
+          />
+        </div>
+        <div class="form-control">
+          <input type="number" id="amount" placeholder="Valor da transação" />
+          <small>(negativo - despesas, positivo - receitas)</small>
+        </div>
+        <button class="btn">Adicionar</button>
+      </form>
+    </div>
+    <div class="container">
+      <h1>Controle de despesas 👋</h1>
+      <div class="control">
+        <h4>Saldo atual</h4>
+        <h2 id="balance" class="balance">R$ 0.00</h2>
+      </div>
+      <div class="inc-exp-container">
+        <div class="div-money">
+          <h4>Receitas</h4>
+          <p id="money-plus" class="money plus">+ R$0.00</p>
+        </div>
+        <div class="div-money">
+          <h4>Despesas</h4>
+          <p id="money-minus" class="money minus">- R$0.00</p>
+        </div>
+      </div>
+      <h3>Transações 💸</h3>
+      <ul id="transactions" class="transactions"></ul>
+    </div>
+    <button id="btn-add" onclick="mostrar()">
+      <i class="ri-add-line"></i>
+    </button>
+    <script src="script.js"></script>
+    <script>
+      mostrar = () => {
+        if (document.getElementById("div-add").style.display == "none") {
+          document.getElementById("div-add").style.display = "block";
+        } else {
+          document.getElementById("div-add").style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>
